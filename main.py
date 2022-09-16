@@ -22,6 +22,9 @@ time.sleep(2)
 print ("Pondre a prueba tus conocimientos")
 time.sleep(2)
 
+print (YELLOW+"Como bonus se te asignara por primer intento una cantidad de puntos"+RESET)
+time.sleep(2)
+
 print(RED+"Tienes", puntaje, "puntos"+RESET)
 time.sleep(2)
 
@@ -50,10 +53,10 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
   time.sleep(1)
   
   # Almacenamos la respuesta del usuario en la variable "respuesta_1"
-  respuesta_1 = input("\nTu respuesta: ")
+  respuesta_1 = input("\nTu respuesta: ").lower()
   
   while respuesta_1 not in ("a", "b", "c", "d", "x"):
-    respuesta_1 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ")
+    respuesta_1 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ").lower()
   
   if respuesta_1 == "c":
     puntaje += random.randint(0, 10)
@@ -64,12 +67,12 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
     print(YELLOW+"esta es un mensaje secreto", nombre, "llevas", puntaje, "puntos!\n"+RESET)
     
   else :
-    puntaje -= random.randint(0, 10)
+    puntaje -= random.randint(0, 5)
     print(RED+"Incorrecto", nombre, "llevas", puntaje, "puntos!\n"+ RESET)
   
   time.sleep(3)
     
-  print ("1) ¿Cual es la fruta preferida de Nami?")
+  print ("2) ¿Cual es la fruta preferida de Nami?")
   time.sleep(1)
   print ("a) Durazno")
   time.sleep(1)
@@ -86,20 +89,20 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
     respuesta_2 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ")
   
   if respuesta_2 == "b":
-    puntaje *= random.randint(0, 10)
+    puntaje += random.randint(6, 10)
     print(GREEN+"Muy bien", nombre, "llevas", puntaje, "puntos!\n"+RESET)
   
-  elif respuesta_1 == "j":
+  elif respuesta_2 == "j":
     puntaje += random.randint(20, 30)
     print(YELLOW+"esta es un mensaje secreto", nombre, "llevas", puntaje, "puntos!\n"+RESET)
     
   else :
-    puntaje /= random.randint(0, 10)
+    puntaje /= random.randint(0, 5)
     print(RED+"Incorrecto", nombre, "llevas", puntaje, "puntos!\n"+ RESET)
   
   time.sleep(3)
     
-  print ("1) ¿Cual fue la primera katana de Zoro Roronoa?")
+  print ("3) ¿Cual fue la primera katana de Zoro Roronoa?")
   time.sleep(1)
   print ("a) Shusui")
   time.sleep(1)
@@ -116,20 +119,20 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
     respuesta_3 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ")
   
   if respuesta_3 == "b":
-    puntaje += random.randint(0, 10)
+    puntaje += random.randint(6, 10)
     print(GREEN+"Muy bien", nombre, "llevas", puntaje, "puntos!\n"+RESET)
   
-  elif respuesta_1 == "o":
+  elif respuesta_3 == "o":
     puntaje += random.randint(20, 30)
     print(YELLOW+"esta es un mensaje secreto", nombre, "llevas", puntaje, "puntos!\n"+RESET)
     
   else :
-    puntaje -= random.randint(0, 10)
+    puntaje -= random.randint(0, 5)
     print(RED+"Incorrecto", nombre, "llevas", puntaje, "puntos!\n"+ RESET)
   
   time.sleep(3)
   
-  print ("1) ¿En que arco se un el doctor de la tripulación?")
+  print ("4) ¿En que arco se un el doctor de la tripulación?")
   time.sleep(1)
   print ("a) Arabasta")
   time.sleep(1)
@@ -142,7 +145,7 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
   
   respuesta_4 = input("\nTu respuesta: ")
   
-  while respuesta_4 not in ("a", "b", "c", "d", "j"):
+  while respuesta_4 not in ("a", "b", "c", "d"):
     respuesta_4 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ")
     
   if respuesta_4 == "a":
@@ -158,7 +161,7 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
     print(RED+"Incorrecto!", nombre, "No has visto one piece"+RESET)
     
   else:
-    puntaje += random.randint(0, 10)
+    puntaje += random.randint(20, 30)
     print (GREEN+"Muy bien", nombre, "!"+RESET)
   
   time.sleep(4) 
@@ -168,6 +171,6 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
   print("\n¿Deseas intentar la trivia nuevamente?")
   repetir_trivia = input("Ingresa 'si' para repetir, o cualquier tecla para finalizar: ").lower()
   if repetir_trivia != "si":  # != significa "distinto"
-   print("\nEspero {nombre} que lo hayas pasado bien, hasta pronto!")
+   print("\nEspero",  nombre ,"que lo hayas pasado bien, hasta pronto!")
    iniciar_trivia = False  # Cambiamos el valor de iniciar_trivia a False para evitar que se repita.
 
