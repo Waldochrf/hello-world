@@ -29,6 +29,17 @@ print(RED+"Tienes", puntaje, "puntos"+RESET)
 time.sleep(2)
 
 nombre = input("Ingresa tu nombre nakama: ")
+caracteres = len(nombre)
+tipo = nombre.isalpha()
+if tipo == True :
+  if caracteres < 2:
+   nombre = input("se debe ingresar por lo menos 2 letras")
+  elif caracteres > 12:
+    nombre = input("debe contener menos de 12 caracteres")
+  else:
+    print("\n")
+else:
+  nombre = input("Ingresa solo letras:")
 
 print(BLUE+"\n Hola nakama", nombre, "responde las siguientes preguntas escribiendo la letra de la alternativa y presionando 'Enter' para enviar tu respuesta:\n"+RESET)
 time.sleep(2)
@@ -38,7 +49,7 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
   puntaje = 0
 
   print("\nIntento número:", intentos)
-  input("Presiona Enter para continuar")
+  input("Presiona Enter para continuar \n")
 
   # Pregunta 1
   print ("1) ¿Como se llama el protagonista de one piece?")
@@ -59,7 +70,7 @@ while iniciar_trivia == True: #  Mientras iniciar_trivia sea True, repite:
     respuesta_1 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta: ").lower()
   
   if respuesta_1 == "c":
-    puntaje += random.randint(0, 10)
+    puntaje += random.randint(8, 10)
     print(GREEN+"Muy bien", nombre, "llevas", puntaje, "puntos!\n"+RESET)
   
   elif respuesta_1 == "x":
